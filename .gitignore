@@ -1,0 +1,40 @@
+# Internal reports
+BASELINE.md
+FINAL.md
+
+# Java build artifacts
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# Logs and coverage
+*.log
+coverage/
+
+# Temp and cache
+.tmp/
+.tmp-test-classes/
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE / editor
+.vscode/settings.json
+.idea/
+*.iml
+.history/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node/Python fallback (if tooling added later)
+node_modules/
+venv/
+.venv/
+__pycache__/

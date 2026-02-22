@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Projeto arquivado (somente estudo)
+    url: https://github.com/enoquesousa/aplicando-orientacao-a-objetos
+    about: Este repositório não está mais ativo e não há garantia de resposta, revisão ou correção.
+  - name: Security report
+    url: https://github.com/enoquesousa/aplicando-orientacao-a-objetos/security/policy
+    about: Reporte vulnerabilidades de segurança por canal privado

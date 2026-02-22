@@ -1,0 +1,39 @@
+name: Bug report
+description: Reportar um comportamento incorreto
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > Este repositório está arquivado para estudo e não está mais ativo.
+        > Não há garantia de resposta, revisão ou correção.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Resumo
+      description: Descreva o bug de forma objetiva
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para reproduzir
+      description: Informe passos exatos para reproduzir
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidências
+      description: Logs, prints e mensagens de erro

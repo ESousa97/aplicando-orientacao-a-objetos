@@ -1,0 +1,29 @@
+name: Feature request
+description: Solicitar melhoria evolutiva
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > Este repositório está arquivado para estudo e não está mais ativo.
+        > Não há garantia de resposta, revisão ou correção.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: Qual problema esta feature resolve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta
+      description: Descreva o comportamento desejado
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Como validar que a feature foi concluída

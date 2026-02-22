@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [17, 21]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java-version }}
+
+      - name: Lint
+        shell: pwsh
+        run: ./scripts/lint.ps1
+
+      - name: Test
+        shell: pwsh
+        run: ./scripts/test.ps1
+
+      - name: Build
+        shell: pwsh
+        run: ./scripts/build.ps1
