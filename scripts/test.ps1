@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot '..')
 $buildScript = Join-Path $PSScriptRoot 'build.ps1'
+$classpathSeparator = [IO.Path]::PathSeparator
 
 & $buildScript -KeepClassFiles
 if ($LASTEXITCODE -ne 0) {
@@ -50,7 +51,7 @@ foreach ($testFile in $testFiles) {
   $className = $classMatch.Groups[1].Value
   $fqcn = if ($packageMatch.Success) { "$($packageMatch.Groups[1].Value).$className" } else { $className }
 
-  $runOutput = & java -cp "$tempTestClasses;$repoRoot" $fqcn 2>&1
+  $runOutput = & java -cp "$tempTestClasses$classpathSeparator$repoRoot" $fqcn 2>&1
   if ($LASTEXITCODE -ne 0) {
     $runErrors += [pscustomobject]@{
       Test = $fqcn
