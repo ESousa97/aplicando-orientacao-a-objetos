@@ -7,7 +7,7 @@ $ErrorActionPreference = 'Stop'
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot '..')
 
 $sourceFiles = Get-ChildItem -Path $repoRoot -Recurse -Filter *.java |
-  Where-Object { $_.FullName -notmatch '\\tests\\' }
+  Where-Object { $_.FullName -notmatch '[\\/]tests[\\/]' }
 
 $directories = $sourceFiles | Group-Object DirectoryName
 $errors = @()
